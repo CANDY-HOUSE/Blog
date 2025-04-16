@@ -1,0 +1,514 @@
+<style><!--
+    pre {
+          max-width: 100%;
+          overflow: auto;
+          white-space: pre-wrap; /* 自動改行を有効にする */
+          word-wrap: break-word; /* 長い単語を折り返す */
+        }
+        code {
+          display: block; /* コードブロックの幅を親要素に合わせる */
+        }
+    --></style>
+    <h2>To Do</h2>
+    <pre><code>
+    ✅<span style="color: #b3b3b3;"><s>SesameBot2の時間単位を0.1秒単位で調整できるようになります</s></span>
+    ✅<span style="color: #b3b3b3;"><s>Android/iOSで設定されたMatterのSesame名とオートメーションがリセットされるバグの修正</s></span>
+    ✅<span style="color: #b3b3b3;"><s>SesameBot2は、Matterにてデフォルトの役割が「ライトスイッチ」になるように。</s></span>
+    ✅<span style="color: #b3b3b3;"><s>デバイス一覧にて、台本切替の手間なしで、直接SesameBot2各台本を表示及び操作できるように。</s></span>
+    ✅<span style="color: #b3b3b3;"><s>Hub3＋SesameBot2＋Matter機能強化。SesameBot2はすでにMatterでライトスイッチとして機能し、さらにAlexa、Google Assistant、Apple Homeがオン/オフ操作にて二つの台本を操作できるように。</s></span>
+    ✅<span style="color: #b3b3b3;"><s>Hub3＋OpenSensor＋Matterのリリース</s></span>
+    ✅<span style="color: #b3b3b3;"><s>Remote nano機能強化：意図せずに押されて鍵が開いてしまうことがないように、ユーザーは長押しモードを選択することができます。</s></span>
+    ✅<span style="color: #b3b3b3;"><s>Remote nano機能強化：Remote nano は、離れてるセサミでも制御できるようになりました。例えば、自宅のセサミや、遠く離れた会社のセサミを、1つのRemote nanoでBluetooth制御することができます。</s></span>
+    ✅<span style="color: #b3b3b3;"><s>遠隔でBluetooth経由せずに、Hub3の再起動とSesameOSをアップデートできるようになります。</s></span>
+    ✅<span style="color: #b3b3b3;"><s>Matter ネットワーク内のデバイスが一定時間後に消失する原因が判明しました。Hub3と連携してるデバイスリストを Hub3 の RAM メモリにのみ保存し、Hub3 のFlashメモリには保存していなかったため、Hub3 が再起動すると、デバイスリストが失われていたことが原因でした。この問題の修正を優先的に数日かけて行います。皆様から現象についての様々な手がかりとヒントをいただき、大変助かりました。</s></span>
+    ✅<span style="color: #b3b3b3;"><s>Sesame Touch Pro/ Sesame Touch/ Remote/ Remote nano機能強化：複数のSesameとBluetooth接続する際、Bluetoothホワイトリスト機能により、複数の切断されたBluetooth接続の高速再接続を実現しました。従来2～3秒かかっていた再接続が、現在では瞬時に完了するようになります。</s></span>
+    ✅<span style="color: #b3b3b3;"><s>赤外線機能の任意学習</s></span>
+    ✅<span style="color: #b3b3b3;"><s>赤外線機能にエアコン、テレビ、照明のライブラリを追加</s></span>
+    ✅<span style="color: #b3b3b3;"><s>赤外線機能にライブラリからの自動マッチング</s></span>
+    ☑️Hub3のLED明るさが自由に調整できるように(2025年4月中旬の予定)
+    ☑️Hub3＋SesameTouch+OpenSensor+Bizの正式リリース(2025年4月中旬の予定)
+       ①履歴におけるSesame Touch/ Sesame Touch Pro/ Open Sensor/ Remote/ Remote nanoの名称変更機能の追加と文字数制限の撤廃
+       ②アプリがBluetooth経由でTouch/ Touch Pro/ Open Sensorに接続していない場合でも、電池残量、指紋リスト、パスワードリスト、Suicaリストを表示できるようUIの完成
+       ③履歴におけるユーザー名、指紋名、パスワード名、Suica名の文字数制限の撤廃
+       ④Web上(Biz)で無料での電池残量、各種指紋、パスワード、Suica設定の編集・管理機能の追加
+    ☑️赤外線機能に複数の任意学習ページが作れるように対応。(2025年4月末の予定)
+    ☑️赤外線機能に残りの全ての家電のライブラリを追加。また、より多くの照明、エアコン、テレビの赤外線ライブラリを導入する予定もございます。(2025年5月末の予定)
+    ☑️Hub3がSesameの内部時計を定期的に校正し、履歴機能の記録時間をかなり正確に保つことで、大規模商用レベルの品質を実現します。(2025年4月末の予定)
+    ☑️全製品において、縦軸を電圧、横軸を時間とするグラフを作成し、数ヶ月にわたりデータを収集・分析することで、電池残量の表示精度を99％に限りなく近づけ、突然異常な電圧低下が発生した場合、即座に通知を送信。また、全製品において、OSバージョンの状態をリアルタイムで記録し、OSの新バージョンがリリースされると、メール通知が届く。(2025年4月末の予定)
+    ☑️iOS Android appにての🔍検索機能(2025年4月末の予定)
+    ☑️CANDY HOUSE全製品は、Matterにての役割を自由に選択できるようになります。鍵やスイッチや赤外線として強制的に定義されることがなくなります。Google Homeによる解錠制限を回避することも可能となります(2025年4月末の予定)
+    ☑️SesameSDKやBluetoothAPIやWebAPIの更新と関連するドキュメントの充実化。引き続き、SesameSDKの更新コストと理解コストをさらに下げるために、iOS及びAndroid版の商用Sesame appを完全にオープンソース化する方向にも進めております。(2025年5月末の予定)
+    ☑️Hub3＋Remote+Remote nano＋Matterのリリース(2025年5月末の予定)
+    ☑️SesameBot2、SesameBike2、Open Sensor履歴及び通知機能のリリース(2025年5月の予定)
+    ☑️Sesame Touch Proの同じ番号をうっかり2回連続で押してしまう場合に備え、ソフトウェアでデバウンス/チャタリングを実装します。(2025年5月末の予定)
+    ☑️指摘を受けて、Hub3とWiFiモジュール2の速度比較、再検証！0.1秒の差も許さない！原因究明・解決を目指します！(2025年5月末の予定)
+    ☑️セサミタッチがマイナンバーカードとパスポートに対応(2025年5月末の予定)
+    ☑️OpenSensorとSesameBot2連携した際に起動秒数を調整できる機能。(2025年5月末の予定)
+    ☑️CANDY HOUSE全製品に対して曜日指定、時間指定等のスケジュール稼働機能。例えば、オートロックの時間帯指定、夜間だけオートロックなど。(2025年6月末の予定)
+    ☑️ゲストへ遠隔操作の権限付与。(2025年6月末の予定)
+    ☑️メールアドレスの変更ができるように。(2025年6月末の予定)
+    </code></pre>
+    <p><br><br><br></p>
+    <h2>Change Log 変更履歴</h2>
+    <pre><code>
+    <b>2025年4月17日(木)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.86(207)-xxxxxx @TestFlight</u></a>
+    <a href="https://github.com/CANDY-HOUSE/SesameSDK_Android_with_DemoApp/releases/latest/download/Sesame_android_release.apk"><u>Android app 3.0.244(249)-8fa324ad9 @Github</u></a>
+    
+    1. iOS/android appにてHub3のLED明るさが自由に調整できるように。
+    2. android appにてGitHub Actionsを使用してCICD building の自動化を導入しました。開発コストを削減し、アプリの迅速なイテレーション(更新サイクル)を実現します。社内の最新masterコードが自動的に同期的に.apkと.aabにbuildされ、GitHub URLから即時にダウンロード可能になりました。
+    3. android appにてUIコードを再構築し簡素化し、バグを減らしメンテナンス性を向上。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年4月10日(木)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.85(202)-98a2c8a @TestFlight</u></a>
+    
+    1. 秘密製品の対応。
+    2. iOS appにてUIコードを再構築し簡素化し、バグを減らしメンテナンス性を向上。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年4月4日(金)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.84(195)-7643ee0f0 @TestFlight</u></a>
+    <a href="https://drive.google.com/file/d/15aRQl6aWBVwJSE4l3ZL-eMisPoe-f2lW/"><u>Android app 3.0.233-3f0d5a0bd @Google Drive</u></a>
+    <u>Sesame Touch Pro</u>
+     3.0-9-4b1c1c
+    <u>Sesame Touch</u>
+     3.0-10-4b1c1c
+    
+    1. Sesame Touch と Sesame Touch Proの性能と安定性を上向：
+    - Bluetoothによるデータ受信の初期段階でのFlash消去と初期化操作を削除。Flash消去と初期化操作をデータ受信完了後に実行するように変更。
+    - BluetoothによるNFCカードのデータ受信プロセスを最適化し、全体的なパフォーマンスを向上。
+    - NFCカード削除プロセス中の一部のログ出力をオフ。
+    - 不要なログ出力を減らし、システムパフォーマンスを向上。
+    - NFCカードデータ入力前に、Flashを消去しRAMを初期化。
+    - NFCカードデータ構造の初期化を最適化し、未使用メモリの読み書きを回避。
+    - NFCカードデータ処理ロジックを調整し、削除効率、データ精度、セキュリティを向上。
+    - NFCカードデータの転送と保存を最適化し、システム効率を向上。
+    - NFCカードの一括削除時のFlash操作を平文から暗号文に変更し、データセキュリティを確保。
+    - NFCカード削除プロセスを再設計し、カード読取り、カード削除、メモリ解放、カード書込み、状態更新の綺麗な5ステップに分割。
+    - NFCカードの一括削除処理関数とコールバックを追加。NFCカード削除のロジックとAPIを実装。
+    - ログ記録とメモリ管理を強化し、コードの可読性と安定性を向上。
+    - 関連ヘッダーファイルと設定を更新。
+    - バグ修正：NFCカード/指紋/パスワードの数がデータベースにリアルタイムで同期されない問題を解決。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年4月1日(火)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.83(193)-b36afbc82 @TestFlight</u></a>
+    
+    1. iOS appに赤外線機能にテレビ、照明のライブラリを追加。より多くの照明、エアコン、テレビの赤外線ライブラリを導入する予定がございます。
+    2. iOS appに赤外線機能に関するバグの修正、UIの修正。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年3月28日(金)</b>
+    <u>Hub3</u>
+     3.0-13-83e5ed
+      
+    1. 新機能 LED呼吸灯の輝度を0%から100%の間で任意に設定できるようになりました。(iOS Android appのUI待ち)
+    2. 新機能【Biz】Sesame TouchのNFCカード管理機能の強化
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年3月28日(金)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.82(188)-bac9432 @TestFlight</u></a>
+    <a href="https://drive.google.com/file/d/15aRQl6aWBVwJSE4l3ZL-eMisPoe-f2lW/"><u>Android app 3.0.231-f6e065aed @Google Drive</u></a>
+      
+    1. Android appに赤外線機能にテレビ、照明のライブラリを追加。より多くの照明、エアコン、テレビの赤外線ライブラリを導入する予定がございます。
+    2. Android appに最新Gradle Plugin 8.9.1を使用。
+    3. iOS appに赤外線機能に関するバグの修正、UIの修正。
+    4. iOS appにてコードを再構築し簡素化し、バグを減らしメンテナンス性を向上。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年3月24日(月)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.81(186)-51b57f7 @TestFlight</u></a>
+    <a href="https://drive.google.com/file/d/15aRQl6aWBVwJSE4l3ZL-eMisPoe-f2lW/"><u>Android app 3.0.230-5249c444b @Google Drive</u></a>
+      
+    1. 赤外線機能にライブラリからの自動マッチング
+    2. UIコードの再構築と最適化。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年3月20日(木)</b>
+    <u>Hub3</u>
+     3.0-13-669b00
+      
+    1. コードの再構築と最適化。Hub3のコードを簡素化し、バグを減らしメンテナンス性を向上。BizというWebシステムに関連するコードロジックをすべてcloudに移行。
+    2. 新機能【Biz】Sesame TouchのNFCカード/指紋/暗証番号の数をリアルタイムでCloudに同期
+    3. 新機能【Biz】Sesame TouchのNFCカードの一括削除に対応
+    4. 新機能【Biz】Sesame TouchのSesameリストをBizに同期
+    5. 新機能【Biz】Biz + Hub3で元のSesame app内のNFCカード/指紋/暗証番号を表示
+    6. バグ修正【Hub3】電源の抜き差しによるcloud再接続時、一回の電源再起動で cloudに再接続が成功する確率が非常に低い問題を修正。平均約5回、最悪の場合10回以上の電源抜き差しが必要だった。問題は接続の切断ではなく、cloudに再接続の成功率が低いこと、または接続が異常な時に自動再接続の仕組みが効果的に機能していないことにあった。
+      - 6.1. WiFi信号強度情報をクラウドに記録し、後の問題分析を容易に
+      - 6.2. MQTT yield / subscribe / unsubscribe / publish の再試行同期間隔を修正し、競合を回避
+    7. バグ修正【赤外線】17個の赤外線コードを任意学習後、2台の携帯電話で同時に「任意学習」画面を開くとHub3がフリーズする問題
+    8. バグ修正【Open Sensor】SesameデバイスをHub3に追加し、Hub3をMatterに追加した後、Open SensorをHub3に追加すると、Open SensorがAlexa、Google Home、Apple Homeに表示されない問題
+    9. バグ修正【Biz】BizシステムでCSVとExcelを使用して（984枚のNFC）NFCカードを登録・追加する際、アップロード中に停滞する問題（5分以上応答なし）
+    10. バグ修正【Biz】Sesame TouchがHub3経由でWiFiに接続する前に、Sesame appのSesame Touchで登録した指紋/NFCカード/暗証番号が、Bizシステムにログイン後も同期されない問題
+    11. バグ修正【Biz】BizでNFCカード登録モードを開いてもNFCカードを登録できない問題
+    12. バグ修正【Biz】BizのNFC IDフォーマットがSesame appと一致しない問題
+    13. バグ修正【Biz】Sesame appのSesame TouchにSesame5デバイスを追加しても、Bizシステムに表示されない問題（Hub3経由でネット接続前後どちらでも表示されない）
+    14. バグ修正【Biz】NFCカードリストCSVファイルによる一括追加が失敗し、一部のみ追加される問題。解決策として、案3を採用：Biz Cloudコード内でデータを分割し、AWS API GatewayのHub3 WebSocket APIのbiz3OperateIoTルートを通じて転送。一回で4910バイトの転送が成功。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年3月11日(火)</b>
+    <u>Hub3</u>
+     3.0-13-8f7864
+      
+    1. ESP32のSDKやAWSIoTライブラリのバグが原因でWiFiやAWSIoTネットワークに再接続できない場合、Hub3は自動的に再起動します。Wi-Fi中継器を使用している環境や、Wi-Fi接続が頻繁に途切れて再接続される場合に、Hub3がインターネット時刻を取得する段階でフリーズする現象がよく発生します。このようなコード修正により、Hub3ソフトウェアの安定性とユーザー体験の堅牢性が大幅に向上できると確認しました。Thanks to APAMAN株式会社。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年3月10日(月)</b>
+    <u>Hub3</u>
+     3.0-13-73188f
+      
+    1. バグ修正：SesameOS更新後すぐ、Open SensorがMatterに追加できない問題を修正。
+    2. バグ修正：Bluetooth接続の安定性を向上。Hub3がBluetooth CentralとしてのFIFOの使用を取りやめ、Bluetooth_write_without_responseを統一的に利用。
+    3. バグ修正：2台のスマホが同時にBluetoothでHub3に赤外線情報を要求した際、2台目のスマホにCMD_RESULT_BUSYを通知。
+    4. バグ修正：Hub3からSesame Touchを削除する過程で、MQTTトピックの解除に失敗した場合、Sesame Touchの削除成功後にHub3を再起動。
+    5. 機能実装：Biz Web管理画面に関連する実装。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年3月10日(月)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.80(181)-4308220e8 @TestFlight</u></a>
+    <a href="https://drive.google.com/file/d/15aRQl6aWBVwJSE4l3ZL-eMisPoe-f2lW/"><u>Android app 3.0.229-f438bc1e3 @Google Drive</u></a>
+    <u>Open Sensor</u>
+     3.0-8-9f3128
+      
+    1. 赤外線機能と関わるクラッシュを修正いたしました。
+    2. Open SensorのBluetooth接続の速度および安定性を向上させました。具体的に、Open SensorでBluetoothの最も基本的なプロトコルである「BLE_GATT_Write_withoutResponse」のみを使用します。より省エネにもなります。
+    3. Android appに最新Gradle 8.11.1及び最新Gradle Plugin 8.9.0を使用。
+    4. iOS アプリにおいて、指紋/NFC/暗証番号の設定ページの表示UIを最適化しコードのリファクタリングを行いました。また、NFCアイコンが表示されない問題を修正しました。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年2月28日(金)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.79(174)-f9adcdfef @TestFlight</u></a>
+    <a href="https://drive.google.com/file/d/15aRQl6aWBVwJSE4l3ZL-eMisPoe-f2lW/"><u>Android app 3.0.228-abc376e1e @Google Drive</u></a>
+    
+    1. 全てのユーザーが赤外線機能をテストできる様になりました。最も複雑なエアコン系から公開。数日後によりシンプルなテレビ系と照明系はも公開テスト。
+    2. Android appに最新Gradle Plugin 8.8.2を使用。
+    3. Android appのBluetooth接続の安定性を向上させました。具体的に、Android appでBluetoothの最も基本的なプロトコルである「BLE_GATT_Write_withoutResponse」のみを使用することで、Android appのBluetooth切れる確率を低減しました。
+    4. Android appのクラッシュの修正。現状Android appのクラッシュ率を0.3%以下に抑えることできました。
+    <img alt="" src="https://cdn.shopify.com/s/files/1/0016/1870/6495/files/AndroidCrashRate20250228.png?v=1740758309">
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年2月26日(水)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.78(170)-7fe5166 @TestFlight</u></a>
+    <a href="https://drive.google.com/file/d/15aRQl6aWBVwJSE4l3ZL-eMisPoe-f2lW/"><u>Android app 3.0.227-f3f25788b @Google Drive</u></a>
+    <u>Sesame Touch Pro</u>
+     3.0-9-c1a0c3
+    <u>Sesame Touch</u>
+     3.0-10-c1a0c3
+    
+    1. Sesame Touch Pro/Sesame Touch が SesameBot2 を操作する際に、指令を2回連続で発信してしまうバグを修正しました。
+    2. Sesame Touch Pro/Sesame TouchのBluetooth接続の安定性を向上させました。具体的に、Sesame Touch Pro/Sesame TouchでBluetoothの最も基本的なプロトコルである「BLE_GATT_Write_withoutResponse」のみを使用することで、Sesame Touch Pro/Sesame TouchのBluetooth切れる確率を低減しました。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年2月24日(月)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.78(169)-afa4d4b @TestFlight</u></a>
+    <a href="https://drive.google.com/file/d/15aRQl6aWBVwJSE4l3ZL-eMisPoe-f2lW/"><u>Android app 3.0.226-f4c038f57 @Google Drive</u></a>
+    <u>Remote</u>
+     3.0-14-9f3128
+    <u>Remote nano</u>
+     3.0-15-9f3128
+    
+    1. Remote/Remote nano が SesameBot2 を操作する際に、指令を2回連続で発信してしまうバグを修正しました。
+    2. Remote/Remote nanoのBluetooth接続の安定性を向上させました。具体的に、Remote/Remote nanoでBluetoothの最も基本的なプロトコルである「BLE_GATT_Write_withoutResponse」のみを使用することで、Remote/Remote nanoのBluetooth切れる確率を低減しました。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年2月24日(月)</b>
+    <u>Hub3</u>
+     3.0-13-af2629
+    
+    1. すべてのソフトウェアを最新バージョンにアップデートしていただくと、機能強化によりOpen Sensorの対応可能台数が増加しました。CANDY HOUSEシステムでは、1台のHub3が実際に30台のOpen Sensorに対応し、Matterネットワークでは1台のHub3が3台のOpen Sensorに対応します。
+    2. バグ修正：4台目のOpen SensorをHub3に追加した場合、開閉状態が変更されると、iOS Home、Google Home、Alexaプラットフォームにて既に追加されている3台目のOpen Sensorの名前がデフォルト名に戻り、その状態が3台目のOpen Sensorに同期される問題がありました。【解決方法】4台目以降は、Matter内で順次最も古いOpen Sensorから上書きし、最後に追加された3台のOpen Sensorのみを保持するようにしました。
+    3. Hub3のBluetooth接続の安定性を向上させました。具体的に、Hub3でBluetoothの最も基本的なプロトコルである「BLE_GATT_Write_withoutResponse」のみを使用することで、Hub3のBluetooth切れる確率を低減しました。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年2月15日(土)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.77(166)-9fe7e07fa @TestFlight</u></a>
+    <a href="https://drive.google.com/file/d/15aRQl6aWBVwJSE4l3ZL-eMisPoe-f2lW/"><u>Android app 3.0.225-e2bc47d60 @Google Drive</u></a>
+    <u>Remote nano</u>
+     3.0-15-23ffdd
+    
+    1. Remote nano 機能強化：複数のSesameとBluetooth接続する際、Bluetoothホワイトリスト機能により、複数の切断されたBluetooth接続の高速再接続を実現しました。従来2～3秒かかっていた再接続が、現在では瞬時に完了するようになります。
+    2. Android appにて、Hub3のSesameOSバージョンが表示されない問題を修正しました。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年2月12日(水)</b>
+    <u>Hub3</u>
+     3.0-13-33a7f5
+    
+    1. Matter ネットワーク内のデバイスが一定時間後に消失する原因が判明しました。Hub3と連携してるデバイスリストを Hub3 の RAM メモリにのみ保存し、Hub3 のFlashメモリには保存していなかったため、Hub3 が再起動すると、デバイスリストが失われていたことが原因でした。この問題の修正を優先的に数日かけて行います。皆様から現象についての様々な手がかりとヒントをいただき、大変助かりました。
+    2. セキュリティ脆弱性を修正しました。Thanks to 株式会社 hacomono. クローズドソースよりも、Githubにてオープンソースしたことにより多くの方々からのご指摘をいただけ、ソフトウェアとシステムがより安全健全に発展していけるものと願っております。
+    3. 併せてコードのリファクタリングを行い、不要なコードの削除、可読性の向上を実施しました。これにより、コード全体の保守性が向上し、より整理された状態となり、コードのメンテナンスコストを削減できます。
+    4. LEDのロジックをリファクタリングし、信号灯の表示を最適化しました。Hub3が赤色の状態で(Sesameが追加されていない場合)、BluetoothまたはWiFiを通じて赤外線を送信する際に、LEDの点滅がない問題を修正しました。
+    5. Hub3の設定詳細からSesameを削除すると、削除成功にも関わらず引き続き表示されます。設定ページを一度退出して再度入ると消えるか、2回目の削除で正常に消える問題を修正しました。
+    6. Bluetooth advertising ロジックを再構築。1台のHub3に2台以上のOpen Sensorが連携された場合、Open Sensorのオン/オフ状態と最終報告時間が更新されない問題を修正しました。
+    7. Hub3にSesameを追加またはOpen Senerに追加された後、Hub3設定ページを退出して、再度Hub3設定ページに入る（2-3回繰り返す）と、Hub3のBluetooth接続が失敗し、「Bluetoothシグナルが見つかりません。近づいてください」というメッセージが表示される問題を修正しました。
+    8. Hub3の設定ページにて追加済みのTouch Pro/Touchの削除に失敗し、削除中にHub3のBluetooth&amp;WiFiが切断・再接続される(Sesame5デバイスの削除は正常)問題を修正しました。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年2月12日(水)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.76(164)-0d9f965 @TestFlight</u></a>
+    <a href="https://drive.google.com/file/d/15aRQl6aWBVwJSE4l3ZL-eMisPoe-f2lW/"><u>Android app 3.0.224-776b2c294 @Google Drive</u></a>
+    <u>Sesame 5</u>
+     3.0-5-f826b5
+    <u>Sesame 5 Pro</u>
+     3.0-7-f826b5
+    <u>Sesame 5 北欧北米版</u>
+     3.0-16-f826b5
+    <u>Sesame Bot 2</u>
+     3.0-17-f826b5
+    <u>Sesame Bike 2</u>
+     3.0-6-f826b5
+    <u>Sesame Touch Pro</u>
+     3.0-9-9bc0d9
+    <u>Sesame Touch</u>
+     3.0-10-9bc0d9
+    <u>Remote</u>
+     3.0-14-4b5bda
+      
+    1. セキュリティ脆弱性を修正しました。Thanks to 株式会社 hacomono. クローズドソースよりも、Githubにてオープンソースしたことにより多くの方々からのご指摘をいただけ、ソフトウェアとシステムがより安全健全に発展していけるものと願っております。
+    2. 併せてコードのリファクタリングを行い、不要なコードの削除、可読性の向上を実施しました。これにより、コード全体の保守性が向上し、より整理された状態となり、コードのメンテナンスコストを削減できます。
+    3. Sesame Touch Pro/ Sesame Touch/ Remote 機能強化：複数のSesameとBluetooth接続する際、Bluetoothホワイトリスト機能により、複数の切断されたBluetooth接続の高速再接続を実現しました。従来2～3秒かかっていた再接続が、現在では瞬時に完了するようになります。
+    4. Sesame Touch Pro/ Sesame Touch/ Remote 機能強化：複数のSesameとBluetooth接続している場合、いずれかのSesameのBluetoothが切断されても(電池切れなど)、他のSesameはSesame Touch Pro/ Sesame Touch/ Remoteで引き続き操作可能になりました。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2025年1月23日(木)</b>
+    <a href="https://testflight.apple.com/join/Rok4GOFD/"><u>iOS app 3.0.76(157)-a4dc4e179 @TestFlight</u></a>
+    <a href="https://drive.google.com/file/d/15aRQl6aWBVwJSE4l3ZL-eMisPoe-f2lW/"><u>Android app 3.0.223-0521da3ab @Google Drive</u></a>
+    <u>Hub3</u>
+     3.0-13-7a9272
+    
+    1. 遠隔でBluetooth経由せずに、Hub3の再起動とSesameOSをアップデートできるようになりました。
+    2. Hub3 BluetoothのMTUサイズを23から248に拡大することで通信速度を向上させています。これにより、Bluetoothの通信時にデータの分割・再構築が効率的に行われるようになり、消費電力もさらに削減されます。
+    3. Hub3 Bluetooth BLEホワイトリストを使用して、複数のBLE Peripheral devicesへの高速接続を実現。
+    4. Hub3 LEDの表示を改善するため、セサミの接続状態をLEDステータス管理に追加し、LEDの表示と実際の状態を一致させます。
+    5. 最新のiOSAWS2.40.1ライブラリーを使用。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年12月14日(土)</b>
+    <u>iOS app 3.0.73(137)</u>
+    <u>Android app 3.0.221</u>
+    <u>Sesame Touch Pro</u>
+     3.0-9-d7bbf0
+    <u>Sesame Touch</u>
+     3.0-10-d7bbf0
+    
+    1. Bizに関するアップデート：Sesame Touch/Sesame Touch ProのBluetooth通信速度を10倍向上させることにより、Sesame Touch Pro ↔︎ Hub3 ↔︎ Web間の連携において、1000枚のICカード情報、100個のパスコード情報、100個の指紋情報をWebへ迅速に反映できるようになります。具体的には、BluetoothのMTUサイズを23から248に拡大することで通信速度を向上させています。これにより、Bluetoothの通信時にデータの分割・再構築が効率的に行われるようになり、消費電力もさらに削減されます。
+    2. 最新のiOSAWS2.38.0ライブラリーを使用。最新のiOSnordicDFU 4.16.0ライブラリーを使用。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年11月30日(土)</b>
+    <u>iOS app 3.0.72(129)</u>
+    <u>Android app 3.0.219</u>
+    <u>SesameBot2</u>
+     3.0-17-e92b5a
+    <u>Open Sensor</u>
+     3.0-8-7b8874
+    <u>Remote nano</u>
+     3.0-15-f46454
+    
+    1.Hub3＋OpenSensor＋Matterのリリース。
+    2.Remote nano機能強化：意図せずに押されて鍵が開いてしまうことがないように、ユーザーは長押しモードを選択し、長押しの秒数を決定することができます。
+    3.Remote nano機能強化：Remote nano は、離れてるセサミ2台をRemote nanoに登録しても、それぞれ制御できるようになりました。<br>例えば、自宅のセサミと、遠く離れた会社のセサミを、1つのRemote nanoに登録し、それぞれのセサミとのBluetoothで接続した際に操作することができます。（以前は、Remote nanoに離れた場所に設置している２つのセサミを連携すると、２つのうち１つのセサミのBluetoothの接続が切れている場合は操作ができなくなる状況でした）
+    4.Bug fixes regarding to SesameBot2.</code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年11月14日(木)</b>
+    <u>iOS app 3.0.70(119)</u>
+    <u>Android app 3.0.217</u>
+    <u>SesameBot2</u>
+     3.0-17-4abab1
+    <u>Hub3</u>
+     3.0-13-6acaa4
+    
+    1. Hub3＋SesameBot2＋Matter機能強化。SesameBot2はすでにMatterでライトスイッチとして機能し、さらにAlexa、Google Assistant、Apple Homeがオン/オフ操作にて二つの台本を操作できるように。
+    2. Bug fixes
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年11月5日(火)</b>
+    <u>iOS app 3.0.68(112)</u>
+    <u>Android app 3.0.215</u>
+    <u>SesameBot2</u>
+     3.0-17-0a9077
+    <u>Hub3</u>
+     3.0-13-526f6e
+    
+    1. デバイス一覧にて、台本切替の手間なしで、直接SesameBot2各台本を表示及び操作できるようになりました。
+    2. 赤外線の発射機能に関するバグの修正。
+    3. Biz機能の強化。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年10月26日(土)</b>
+    <u>iOS app 3.0.67(109)</u>
+    <u>SesameBot2</u>
+     3.0-17-7d9d54
+    
+    1. デバイス一覧にて、台本切替の手間なしで、直接SesameBot2各台本を表示及び操作できるようになりました。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年10月18日(金)</b>
+    <u>iOS app 3.0.65(98)</u>
+    <u>Android app 3.0.211</u>
+    <u>SesameBot2</u>
+     3.0-17-3ab84f
+    <u>Hub3</u>
+     3.0-13-ce81a7
+    
+    1. SesameBot2の時間単位を0.1秒単位で調整できるようになりました。
+    2. SesameBot2は、Matterにてデフォルトの役割が「ライトスイッチ」になりました。Amazon Alexa、Google Home、Apple Home にて動作確認済み。
+    3. Hub3のインターネット接続性能と安定性の強化。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年10月12日(土)</b>
+    <u>Hub 3</u>
+     3.0-13-f44d59
+    
+    1. ESP32の低レベルSDKのバグが原因でWiFiやAWSIoTネットワークに再接続できない場合、Hub3は自動的に再起動します。このようなコード修正により、Hub3ソフトウェアの安定性とユーザー体験の堅牢性が大幅に向上できると確認しました。
+    2. 24時間ごとにHub3のネット接続状態を自己報告としてサーバーに校正信号を送信します。
+    これは二重の保険メカニズムとして、サーバー上のHub3のネット接続状態と実際のHub3のネット接続状態が一致することを確保します。このようなコード修正により、Hub3ソフトウェアの安定性とユーザー体験の堅牢性が大幅に向上できると確認しました。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年10月2日</b>
+    <u>iOS app 3.0.62(86)</u> 
+    <u>Android app 3.0.208</u>
+    <u>Sesame 5</u>
+     3.0-5-a7870b
+    <u>Sesame 5 Pro</u>
+     3.0-7-a7870b
+    <u>Sesame 5 北米北欧版</u>
+     3.0-16-a7870b
+    
+    1. 一部のユーザーが経験していた履歴と通知の文字化けの問題を修正しました。
+    2. 一部のユーザーで発生していた履歴と通知が表示されない問題を解決しました。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年9月30日</b>
+    <u>iOS app 3.0.61(84)</u> 
+    <u>Android app 3.0.207</u>
+    <u>Sesame Touch</u>
+     3.0-10-16f7fd
+    <u>Sesame Touch Pro</u>
+     3.0-9-16f7fd
+    
+    1. Sesame Touch ProとSesame Touchが1000枚のICカードに対応。
+    2. Android/iOSで設定されたMatterのSesame名とオートメーションがリセットされるバグの修正。
+    3. 最新iOSライブラリー使用：AWSiOSSDKV2 2.37.2 / NordicDFU 4.15.3 / ZIPFoundation 0.9.19
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年9月19日</b>
+    <u>Hub3</u>
+     3.0-13-adc7f5
+    
+    1. Hub3の安定性を全面的に強化。
+    2. SesameBot2は、Matterにてデフォルトの役割が「スイッチ」になります。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年9月15日</b>
+    <u>iOS app 3.0.60(78)</u>
+    <u>Android app 3.0.206</u>
+    <u>Hub3</u>
+     3.0-13-f63f51
+    
+    1. Hub3の安定性を全面的に強化。
+    2. Android app いくつのクラッシュの修正。
+    3. 最新iOSライブラリー使用：AWSiOSSDKV2 2.37.1 / NordicDFU 4.15.3 / ZIPFoundation 0.9.19
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年8月22日</b>
+    <u>iOS app 3.0.57(66)</u>
+    <u>Android app 3.0.199</u>
+    <u>Hub3</u>
+     3.0-13-dda733
+    
+    1. Hub3が赤ランプ状態に入った後、非常に弱くて不安定なWi-Fi環境に対応するため自動的に再起動を行います。
+    2. Hub3が履歴をサーバーにアップロードする際に、SesameのBluetooth接続に影響を与えるバグを修正しました。
+    3. 誤ったネットワーク接続状態の表示に関するバグを修正しました。
+    4. 最大63バイトのWiFiパスワードに対応しました。
+    5. 最新iOSライブラリー使用：AWSiOSSDKV2 2.36.7 / NordicDFU 4.15.3 / ZIPFoundation 0.9.19
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年5月29日</b>
+    <u>iOS app 3.0.53(44)</u>
+    
+    1. メールアドレスによる友達追加に対応しました。
+    2. 指紋登録/ICカード登録/暗証番号登録のUIが新しくなりました。
+    3. 5つの新製品に対応しました。
+    4. クラッシュとバグを修正いたしました。
+    5. 最新iOSライブラリー使用：AWSiOSSDKV2 2.36.2 / NordicDFU 4.15.3 / ZIPFoundation 0.9.19
+    フィードバックをいただき心から感謝申し上げます。
+    </code></pre>
+    <hr>
+    <pre><code>
+    <b>2024年3月22日</b>
+    <u>iOS app 3.0.52(9)</u>
+    
+    1. Appleのプライバシー規定に準拠するため、コードレベルでマニフェスト宣言を追加しました。
+    2. クラッシとバグを修正させていただきました。
+    3. 最新iOSライブラリー使用：AWSiOSSDKV2 2.34.2 / NordicDFU 4.15.0 / ZIPFoundation 0.9.18
+    </code></pre>
+    <hr>
+    <pre><code></code></pre>
+    <pre><code>
+    <b>2024年3月12日</b>
+    <u>iOS app 3.0.51(5)</u>
+    
+    1. iOSアプリが4つの新製品に対応しました。
+    2. クラッシとバグを修正させていただきました。
+    3. 最新iOSライブラリー使用：AWSiOSSDKV2 2.34.0 / NordicDFU 4.10.4 / ZIPFoundation 0.9.11
+    </code></pre>
+    <pre><code></code></pre>
+    <hr>
+    <pre><code></code></pre>
+    <pre><code>
+    <b>2024年2月23日</b>
+    <u>iOS app 3.0.50(20)</u>
+    
+    1. iOSアプリが4つの新製品に対応しました。
+    2. クラッシとバグを修正させていただきました。
+    3. 鍵権限の同期を改善しました。
+    4. 最新iOSライブラリー使用：AWSiOSSDKV2 2.33.10 / NordicDFU 4.10.4 / ZIPFoundation 0.9.11
+    </code></pre>
+    <pre><code></code></pre>
+    <hr>
+    <pre><code></code></pre>
+    <pre><code>
+    <b>2023年12月4日</b>
+    <u>iOS app 3.0.49(1)</u>
+    <u>Android app 3.0.179</u>
+    <u>Sesame 5</u>
+     3.0-5-0efc85
+    <u>Sesame 5 Pro</u>
+     3.0-7-0efc85
+    
+    1.モーターが稼働している時にシステムがウォッチドッグにフィードしていないため、複数回転のロックが回転中に再起動してしまいます。
+    </code></pre>
+    <pre><code></code></pre>
